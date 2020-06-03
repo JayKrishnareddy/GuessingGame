@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="">Guessing Game</a>.</p>
+        
+    </div>
+    <form asp-page="Index" method="post">
+        <div class="parent">
+            @for (int i = 1; i < 10; i++)
+            {
+                <div class="box @($"box{i}")">
+                    <button type="submit"
+                            name="box"
+                            value="@(i)">
+                        🎁
+                    </button>
+                </div>
+            }
+        </div>
+    </form>
